@@ -7,8 +7,16 @@
     "build": "gulp build",
     "start": "gulp"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izolotarev/mobile-first.git"
+  },
   "author": "Igor Zolotarev",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/izolotarev/mobile-first/issues"
+  },
+  "homepage": "https://github.com/izolotarev/mobile-first#readme",
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "browser-sync": "^2.27.4",
