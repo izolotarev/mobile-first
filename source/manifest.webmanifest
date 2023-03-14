@@ -1,0 +1,10 @@
+{
+  "short_name": "Mobile First Markup",
+  "name": "Mobile First Markup",
+  "icons": [
+    { "src": "assets/img/favicons/favicon-192.png", "type": "image/png", "sizes": "192x192", "purpose": "any maskable" },
+    { "src": "assets/img/favicons/favicon-512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "theme_color": "#060606",
+  "background_color": "#060606"
+}
