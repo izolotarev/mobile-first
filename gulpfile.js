@@ -11,6 +11,8 @@ const terser = require("gulp-terser");
 const rename = require("gulp-rename");
 const csso = require("postcss-csso");
 const imagemin = require("gulp-imagemin");
+const webp = require("gulp-webp");
+const svgstore = require("gulp-svgstore");
 
 // Styles
 
@@ -30,6 +32,7 @@ const styles = () => {
 }
 
 exports.styles = styles;
+
 
 // Server
 
@@ -58,7 +61,7 @@ const reload = (done) => {
 
 const watcher = () => {
   gulp.watch("source/sass/**/*.scss", gulp.series("styles"));
-  gulp.watch("source/js/scripts.js"), gulp.series("scripts")
+  gulp.watch("source/js/scripts.js", gulp.series("scripts"));
   gulp.watch("source/*.html", gulp.series(html, reload));
 }
 
@@ -86,12 +89,33 @@ const optimizeImages = () => {
 
 exports.optimizeImages = optimizeImages;
 
+// Webp
+
+// const makeWebp = () => {
+//   return gulp.src("source/img/**/*.{png,jpg}")
+//     .pipe(webp({quality: 90}))
+//     .pipe(gulp.dest("source/img"))
+// }
+
+// exports.webp = makeWebp;
+
 const copyImages = async () => {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(gulp.dest("build/img"))
 }
 
 exports.copyImages = copyImages;
+
+// Sprite
+
+// const sprite = () => {
+//   return gulp.src("source/img/**/icon-*.svg")
+//       .pipe(svgstore())
+//       .pipe(rename("sprite.svg"))
+//       .pipe(gulp.dest("build/img"))
+// }
+
+// exports.sprite = sprite;
 
 // Scripts
 

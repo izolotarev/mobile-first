@@ -1,0 +1,27 @@
+.page-header {
+  background-color: $color-dark-background;
+  color: $color-light;
+  display: flex;
+	flex-direction: column;
+
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    max-width: calc($desktop-width + 2 * 20px) ;
+    margin: 0 auto;
+  }
+}
+
+.page-header__logo {
+  height: 60px;
+  padding: 20px;
+
+  @media (min-width: $tablet-width) {
+    padding-right: 0;
+  }
+}
+
+.page-header__logo img {
+  height: 60px;
+  width: 188px;
+}

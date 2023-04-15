@@ -1,0 +1,30 @@
+.site-list {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+  }
+}
+
+.site-list__item {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 300;
+  text-transform: uppercase;
+
+  & a {
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    color: $color-light;
+  }
+
+  &--active a, &:hover a {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-underline-offset: 4px;
+  }
+
+}

@@ -1,0 +1,36 @@
+.user-list {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    padding-right: 20px;
+  }
+}
+
+
+.user-list__register {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 300;
+
+  padding: 10px 20px;
+  display: block;
+
+  text-decoration: none;
+  color: $color-light;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    border: 3px solid #FFFFFF;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 164px;
+    height: 50px;
+
+    box-sizing: border-box;
+
+    padding: 0;
+  }
+}
