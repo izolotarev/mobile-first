@@ -117,7 +117,7 @@
   }
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: $mobile-width-only) {
   .main-nav--closed .main-nav__wrapper {
     min-height: 70vh;
     position: absolute;
@@ -141,3 +141,5 @@
     display: none;
   }
 }
+
+
