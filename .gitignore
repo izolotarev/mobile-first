@@ -10,3 +10,5 @@ node_modules/
 npm-debug.log*
 Thumbs.db
 .vscode/
+source/css/*.css
+source/css/*.map

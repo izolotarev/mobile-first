@@ -13,21 +13,25 @@ const csso = require("postcss-csso");
 const imagemin = require("gulp-imagemin");
 const webp = require("gulp-webp");
 const svgstore = require("gulp-svgstore");
+const mode = require("gulp-mode")();
+const processhtml = require('gulp-processhtml');
+
+const folder = mode.production() ? "build" : "source";
 
 // Styles
 
 const styles = () => {
   return gulp.src("source/sass/style.scss")
-    .pipe(plumber())
-    .pipe(sourcemap.init())
+    .pipe(plumber()) //errors
+    .pipe(mode.development(sourcemap.init()))
     .pipe(sass())
-    .pipe(postcss([
+    .pipe(mode.production((postcss([
       autoprefixer(),
-      csso()
-    ]))
-    .pipe(rename("style.min.css"))
-    .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
+      csso() //min css
+    ]))))
+    .pipe(mode.production(rename("style.min.css")))
+    .pipe(mode.development(sourcemap.write(".")))
+    .pipe(gulp.dest(`${folder}/css`))
     .pipe(sync.stream());
 }
 
@@ -39,7 +43,7 @@ exports.styles = styles;
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: "build"
+      baseDir: folder
     },
     cors: true,
     notify: false,
@@ -60,8 +64,8 @@ const reload = (done) => {
 // Watcher
 
 const watcher = () => {
-  gulp.watch("source/sass/**/*.scss", gulp.series("styles"));
-  gulp.watch("source/js/scripts.js", gulp.series("scripts"));
+  gulp.watch("source/sass/**/*.scss", gulp.series(styles));
+  gulp.watch("source/js/scripts.js", gulp.series(scripts));
   gulp.watch("source/*.html", gulp.series(html, reload));
 }
 
@@ -69,6 +73,7 @@ const watcher = () => {
 
 const html = () => {
   return gulp.src("source/*.html")
+    .pipe(processhtml())
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("build"));
 }
@@ -112,7 +117,7 @@ exports.copyImages = copyImages;
 //   return gulp.src("source/img/**/icon-*.svg")
 //       .pipe(svgstore())
 //       .pipe(rename("sprite.svg"))
-//       .pipe(gulp.dest("build/img"))
+//       .pipe(gulp.dest("build/img")) //source
 // }
 
 // exports.sprite = sprite;
@@ -135,7 +140,7 @@ const copy = async () => {
   gulp.src([
     "source/*.ico",
     "source/*.webmanifest",
-    "source/fonts/*.{woff2,woff}",
+    "source/fonts/*.{woff2,woff}"
   ], {
     base: "source",
     allowEmpty: true
@@ -158,6 +163,7 @@ exports.clean = clean;
 const build = gulp.series(
   clean,
   copy,
+  copyImages,
   optimizeImages,
   gulp.parallel (
     styles,
@@ -174,16 +180,8 @@ exports.build = build;
 
 // Default
 
-
 exports.default = gulp.series(
-  clean,
-  copy,
-  copyImages,
-  gulp.parallel (
-    styles,
-    html,
-    scripts
-  ),
+  styles,
   gulp.series(
     server,
     watcher
