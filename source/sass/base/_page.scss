@@ -1,9 +1,11 @@
 .page {
   height: 100%;
-  font-size: 16px;
-  font-family: "IBM Plex Mono", monospace;
-  line-height: 21px;
+
+  @extend %font-prim;
+  @include font($size: 16px, $height: 21px);
+
   color: $color-light;
+  scroll-behavior: smooth;
 }
 
 .page__body {

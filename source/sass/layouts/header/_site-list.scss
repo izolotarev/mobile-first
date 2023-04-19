@@ -8,10 +8,8 @@
 }
 
 .site-list__item {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 16px;
-  line-height: 21px;
-  font-weight: 300;
+  @extend %font-sec;
+  @include font($size: 16px, $height: 21px, $weight: 300);
   text-transform: uppercase;
 
   & a {

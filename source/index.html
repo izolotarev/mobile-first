@@ -92,58 +92,179 @@
     </header>
     <main>
       <section class="forum" id="forum">
-        <div class="forum__wrapper">
-          <h1 class="forum__title-main">Форум Microsoft</h1>
-          <h2 class="forum__title-sec">«Finance industry trust in AI and IT-Security»</h2>
+        <div class="wrapper forum__wrapper">
+          <h1 class="heading-1 forum__title-main">Форум Microsoft</h1>
+          <h2 class="heading-1 forum__title-sec">«Finance industry trust in AI and IT-Security»</h2>
           <p class="forum__description">Масштабная кибератака и устаревшее оборудование может привести к потере клиентов, ухудшить отношения с партнёрами и учредителями, а невыполнение требований законодательства может привести к существенным штрафам и даже к блокировке ресурсов</p>
           <p class="forum__tooltip">Узнайте как этого избежать, регистрируйтесь на наш форум</p>
-          <a class="button" href="#signup">
+          <a class="forum__button" href="#signup">
             Регистрация
           </a>
         </div>
       </section>
-      <section className="speakers" id="speakers">
-        <div class="speakers__wrapper">
-          <h2 className="speakers__title">Спикеры нашего форума</h2>
-          <ul className="speakers__list">
-            <li className="speakers__list-item">
-              <img
-                className="speakers__img"
-                src="img/girl.jpg"
-                alt="speaker"
-              />
-              <h3 className="speakers__name">Кристина Боровикова</h3>
-              <div className="speakers__line"></div>
-              <p className="speakers__description">
+      <section class="speakers" id="speakers">
+        <div class="wrapper speakers__wrapper">
+          <h2 class="heading-2 speakers__title">Спикеры нашего форума</h2>
+          <ul class="speakers__list">
+            <li class="speakers__list-item">
+              <picture class="speakers__img-container">
+                <source
+                  media="(min-width: 1024px)"
+                  srcset="
+                    img/speakers/desktop-girl.jpg 1x,
+                    img/speakers/desktop-girl_x2.jpg 2x
+                  "
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    img/speakers/tablet-girl.jpg 1x,
+                    img/speakers/tablet-girl_x2.jpg 2x
+                  "
+                />
+                <img
+                  class="speakers__img"
+                  src="img/speakers/mobile-girl.jpg"
+                  srcset="img/speakers/mobile-girl_x2.jpg 2x"
+                  alt="speaker"
+                />
+              </picture>
+              <!-- add width="330" and height="435" attrs to img tag to constraint the size of the image  -->
+              <!-- Now the height and width are expanding -->
+              <h3 class="speakers__name">Кристина Боровикова</h3>
+              <div class="speakers__line"></div>
+              <p class="speakers__description">
                 Старший консультант Cybersecurity команды в России в области ИТ-технологий, ИТ-рисков и других  ИТ-технологий
               </p>
-              <a className="speakers__detailed" href="/#">Подробнее</a>
+              <a class="speakers__detailed" href="/#">Подробнее</a>
             </li>
-            <li className="speakers__list-item">
-              <img
-                className="speakers__img"
-                src="img/girl.jpg"
-                alt="speaker"
-              />
-              <h3 className="speakers__name">Кристина Боровикова</h3>
-              <div className="speakers__line"></div>
-              <p className="speakers__description">
+            <li class="speakers__list-item">
+              <picture class="speakers__img-container">
+                <source
+                  media="(min-width: 1024px)"
+                  srcset="
+                    img/speakers/desktop-girl.jpg 1x,
+                    img/speakers/desktop-girl_x2.jpg 2x
+                  "
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    img/speakers/tablet-girl.jpg 1x,
+                    img/speakers/tablet-girl_x2.jpg 2x
+                  "
+                />
+                <img
+                  class="speakers__img"
+                  src="img/speakers/mobile-girl.jpg"
+                  srcset="img/speakers/mobile-girl_x2.jpg 2x"
+                  alt="speaker"
+                />
+              </picture>
+              <!-- add width="330" and height="435" attrs to img tag to constraint the size of the image  -->
+              <!-- Now the height and width are expanding -->
+              <h3 class="speakers__name">Кристина Боровикова</h3>
+              <div class="speakers__line"></div>
+              <p class="speakers__description">
                 Старший консультант Cybersecurity команды в России в области ИТ-технологий, ИТ-рисков и других  ИТ-технологий
               </p>
-              <a className="speakers__detailed" href="/#">Подробнее</a>
+              <a class="speakers__detailed" href="/#">Подробнее</a>
             </li>
-            <li className="speakers__list-item">
-              <img
-                className="speakers__img"
-                src="img/girl.jpg"
-                alt="speaker"
-              />
-              <h3 className="speakers__name">Кристина Боровикова</h3>
-              <div className="speakers__line"></div>
-              <p className="speakers__description">
+            <li class="speakers__list-item">
+              <picture class="speakers__img-container">
+                <source
+                  media="(min-width: 1024px)"
+                  srcset="
+                    img/speakers/desktop-girl.jpg 1x,
+                    img/speakers/desktop-girl_x2.jpg 2x
+                  "
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    img/speakers/tablet-girl.jpg 1x,
+                    img/speakers/tablet-girl_x2.jpg 2x
+                  "
+                />
+                <img
+                  class="speakers__img"
+                  src="img/speakers/mobile-girl.jpg"
+                  srcset="img/speakers/mobile-girl_x2.jpg 2x"
+                  alt="speaker"
+                />
+              </picture>
+              <!-- add width="330" and height="435" attrs to img tag to constraint the size of the image  -->
+              <!-- Now the height and width are expanding -->
+              <h3 class="speakers__name">Кристина Боровикова</h3>
+              <div class="speakers__line"></div>
+              <p class="speakers__description">
                 Старший консультант Cybersecurity команды в России в области ИТ-технологий, ИТ-рисков и других  ИТ-технологий
               </p>
-              <a className="speakers__detailed" href="/#">Подробнее</a>
+              <a class="speakers__detailed" href="/#">Подробнее</a>
+            </li>
+            <li class="speakers__list-item">
+              <picture class="speakers__img-container">
+                <source
+                  media="(min-width: 1024px)"
+                  srcset="
+                    img/speakers/desktop-girl.jpg 1x,
+                    img/speakers/desktop-girl_x2.jpg 2x
+                  "
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    img/speakers/tablet-girl.jpg 1x,
+                    img/speakers/tablet-girl_x2.jpg 2x
+                  "
+                />
+                <img
+                  class="speakers__img"
+                  src="img/speakers/mobile-girl.jpg"
+                  srcset="img/speakers/mobile-girl_x2.jpg 2x"
+                  alt="speaker"
+                />
+              </picture>
+              <!-- add width="330" and height="435" attrs to img tag to constraint the size of the image  -->
+              <!-- Now the height and width are expanding -->
+              <h3 class="speakers__name">Кристина Боровикова</h3>
+              <div class="speakers__line"></div>
+              <p class="speakers__description">
+                Старший консультант Cybersecurity команды в России в области ИТ-технологий, ИТ-рисков и других  ИТ-технологий
+              </p>
+              <a class="speakers__detailed" href="/#">Подробнее</a>
+            </li>
+            <li class="speakers__list-item">
+              <picture class="speakers__img-container">
+                <source
+                  media="(min-width: 1024px)"
+                  srcset="
+                    img/speakers/desktop-girl.jpg 1x,
+                    img/speakers/desktop-girl_x2.jpg 2x
+                  "
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    img/speakers/tablet-girl.jpg 1x,
+                    img/speakers/tablet-girl_x2.jpg 2x
+                  "
+                />
+                <img
+                  class="speakers__img"
+                  src="img/speakers/mobile-girl.jpg"
+                  srcset="img/speakers/mobile-girl_x2.jpg 2x"
+                  alt="speaker"
+                />
+              </picture>
+              <!-- add width="330" and height="435" attrs to img tag to constraint the size of the image  -->
+              <!-- Now the height and width are expanding -->
+              <h3 class="speakers__name">Кристина Боровикова</h3>
+              <div class="speakers__line"></div>
+              <p class="speakers__description">
+                Старший консультант Cybersecurity команды в России в области ИТ-технологий, ИТ-рисков и других  ИТ-технологий
+              </p>
+              <a class="speakers__detailed" href="/#">Подробнее</a>
             </li>
           </ul>
         </div>

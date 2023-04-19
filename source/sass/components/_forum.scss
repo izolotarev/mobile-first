@@ -1,0 +1,64 @@
+.forum {
+  background-image: url("../../img/background.jpg");
+  background-color: $color-dark-background;;
+  background-repeat: no-repeat;
+  background-position: 95% 0%;
+}
+
+.forum__wrapper {
+  padding: 68px 20px 400px;
+}
+
+.forum__title-main {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.forum__title-sec {
+  margin: 0;
+  margin-bottom: 80px;
+
+  @media (min-width: $tablet-width) {
+    width: 740px;
+  }
+}
+
+.forum__description {
+  margin: 0;
+  margin-bottom: 24px;
+
+  @extend %font-sec;
+  @include font($size: 20px, $height: 26px, $weight: 300);
+
+  @media (min-width: $desktop-width) {
+    width: 955px;
+  }
+}
+
+.forum__tooltip {
+  margin: 0;
+  margin-bottom: 60px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 154px;
+  }
+}
+
+.forum__button {
+  border: 3px solid #FFFFFF;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 164px;
+  height: 50px;
+
+  @extend %font-sec;
+  @include font($size: 16px, $height: 21px, $weight: 300);
+  text-decoration: none;
+  color: #C2BCD2;
+  text-transform: uppercase;
+
+  box-sizing: border-box;
+}

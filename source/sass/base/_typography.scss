@@ -1,0 +1,34 @@
+.heading-1 {
+  @extend %font-prim;
+  @include font($size: 33px, $height: 40px);
+
+  letter-spacing: 0;
+
+  color: $color-light;
+
+  @media (min-width: $tablet-width) {
+    @include font($size: 53px, $height: 69px);
+  }
+}
+
+.heading-2 {
+  @extend %font-sec;
+  @include font($size: 30px, $height: 30px);
+  color: $color-light;
+
+  @media (min-width: $tablet-width) {
+    @include font($size: 37px, $height: 49px, $weight: normal);
+  }
+}
+
+.heading-3 {
+  @extend %font-sec;
+  @include font($size: 16px, $height: 30px);
+  letter-spacing: 0;
+
+  color: $color-white;
+
+  @media (min-width: $tablet-width) {
+    @include font($size: 20px, $height: 26px, $weight: 300);
+  }
+}
